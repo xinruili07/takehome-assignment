@@ -1,0 +1,20 @@
+<template>
+  <div>
+    <p>
+      Pass a 'complete' prop to the instructions component in
+      <code>src/App.js</code>. See the README for more details. If you are successful, you'll see another line below saying you've completed this part.
+    </p>
+    <br />
+    <p v-if="complete">Completed Part 1!</p>
+  </div>
+</template>
+
+<script>
+export default {
+  // PART 1: Add a "complete" prop here
+  // hint: look at Home.vue, which already has a "shows" prop
+};
+</script>
+
+<style>
+</style>
