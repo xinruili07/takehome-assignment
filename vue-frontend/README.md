@@ -1,4 +1,4 @@
-# React.js Frontend
+# Vue.js Frontend
 
 ### Requirements
 * node version 8.x

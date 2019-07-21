@@ -12,7 +12,7 @@
 <script>
 export default {
   // PART 1: Add a "complete" prop here
-  // hint: look at Home.vue, which already has a "shows" prop
+  props: {}
 };
 </script>
 

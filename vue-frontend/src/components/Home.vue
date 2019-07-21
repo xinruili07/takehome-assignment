@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- PART 1: Add a "complete" prop here -->
+    <!-- PART 1: Pass in a "complete" prop here -->
     <Instructions />
     <!-- PART 4: Modify the Show component to accept all of these props -->
     <Show
