@@ -1,8 +1,8 @@
 # Vue.js Frontend
 
 ### Requirements
-* node version 8.x
-* npm version 5.x
+* node version 8.x or newer
+* npm version 5.x or newer
 
 Install node and npm [here](https://nodejs.org/en/download/).
 
