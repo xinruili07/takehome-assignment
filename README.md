@@ -4,6 +4,11 @@
 
 This challenge is intended to expose you to some elements of our most common technical stack: a [Vue](https://vuejs.org/) frontend, and a Flask backend.
 
+[Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) is a lightweight Python framework that is useful for building web applications. The Flask [documentation](http://flask.palletsprojects.com/en/1.1.x/) contains lots of useful information, including a quick-start guide. The following resources may be helpful for learning Python:
+
+* [Python3 Tutorial](https://docs.python.org/3.7/tutorial/index.html)
+* [Python Documentation](https://docs.python.org/3.7/)
+
 The following resources may be helpful for learning Vue:
 
 [The Official Vue Documentation](https://vuejs.org/v2/guide/) is very beneficial to go through to get a complete understanding on Vue fundamentals; reading about [Single File Components](https://vuejs.org/v2/guide/single-file-components.html) will be useful for this assignment in particular. It may also be beneficial to get comfortable diving into [Javascript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) as part of this exercise.
