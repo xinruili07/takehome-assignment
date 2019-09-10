@@ -29,7 +29,7 @@ pip3 install --user virtualenv
 virtualenv -p python3 venv
 ```
 
-You must be in this virtual environment to install dependencies and start this server. Once you do this, you will see `(venv)` preceding your prompts. To do thit:
+You must be in this virtual environment to install dependencies and start this server. Once you do this, you will see `(venv)` preceding your prompts. To do this:
 
 ```
 source venv/bin/activate

@@ -11,11 +11,15 @@ The following resources may be helpful for learning Vue:
 Reading the following will help you get a sense of the big picture when it comes to developing APIs/writing server side code, and how it fits in the context of a larger web application:
 
 - [How the Web Works](https://medium.freecodecamp.org/how-the-web-works-a-primer-for-newcomers-to-web-development-or-anyone-really-b4584e63585c) - Read all 3 parts, especially part 3!
+- [An Overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) - An in-depth look at how HTTP works
+- [HTTP Request Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) - Overview of the different HTTP methods and what they do
 - [Basics of HTTP](https://egghead.io/courses/understand-the-basics-of-http)
 
 This project will be broken down into multiple parts. After you finish this project, you must submit it by following the instructions below.
 
-*This exercise is due before XXXday, YYYY ZZth at 11:59PM. If you can't figure everything out or have spent over 10 hours total, just submit what you have!*
+*This exercise is due before Wednesday, September 25th at 11:59PM. If you can't figure everything out or have spent over 10 hours total, just submit what you have! We prioritize effort over your current skills and knowledge.* 
+
+Submit either a link to your forked GitHub repository or a zipped folder with all of your code to hack4impact@mcgilleus.ca.
 
 For any questions, feel free to email albert.kragl@mail.mcgill.ca.
 
@@ -30,17 +34,19 @@ $ git clone <url>
 $ cd takehome-assignment
 ```
 
-Now open a second terminal and navigate to this cloned repository. 
-In one of the terminals, run `cd backend` then follow the [backend instructions](backend/README.md).
-In the other, run `cd vue-frontend` then follow the [frontend instructions](frontend/README.md).
+*Note: if you get an error after running the `git` command, make sure to install git [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).*
 
-[Postman](https://www.getpostman.com/) or [Advanced REST Client](https://install.advancedrestclient.com/install) will be useful for testing your backend as you go. Click on the links to download whichever one you prefer. Note that the Postman examples are about a different scenario, but they should help you to use it.
+Now open a second terminal and navigate to this cloned repository. 
+In one of the terminals, type `cd backend` then follow the [backend instructions](backend/README.md).
+In the other, type `cd vue-frontend` then follow the [frontend instructions](frontend/README.md).
+
+[Postman](https://www.getpostman.com/) or [Advanced REST Client](https://install.advancedrestclient.com/install) will be useful for testing your backend as you go. These are applications that can send various types of HTTP requests to specified endpoints. Click on the links to download whichever one you prefer. Note that the Postman examples are about a different scenario, but they should help you to use it.
 
 For this assignment, we don't recommend using Eclipse; instead, we recommend using either [VSCode](https://code.visualstudio.com/download) or [Atom](https://atom.io/) as your code editor. 
 
 # Exercise 
 
-The following exercise will have you learn and apply some Vue and Flask to build a tool to keep track of your progress in multiple TV shows.
+The following exercise will have you learn and apply some Vue and Flask to build a tool to keep track of your progress in multiple TV shows. Check the README in the `backend` folder for more detailed instructions!
 
 ## Flask
 
@@ -53,7 +59,7 @@ GET /shows
 http://127.0.0.1:8080/shows
 ```
 
-This should return a properly formatted JSON response that contains a list of all the `shows` in the mockdb. If you call this endpoint after starting the server, you should get this response in Postman/ARC:
+This should return a properly formatted JSON response that contains a list of all the `shows` in the mockdb. If you call this endpoint **after starting the server**, you should get this response in Postman/ARC:
 
 ```
 {
@@ -105,7 +111,7 @@ This should retrieve a single show that has the `id` provided from the request. 
 }
 ```
 
-If there doesn't exist a show with the provided `id`, return a `404` with a descriptive `message`. Remember to make use of the provided mockdb methods!
+If there doesn't exist a show with the provided `id`, return a `404` HTTP status code with a descriptive `message`. Remember to make use of the provided mockdb methods!
 
 *Use Part 5, which has been completed for you, to figure out how to write this endpoint!*
 
@@ -125,7 +131,7 @@ A successful request should return a status code of `201` and return the newly c
 
 If any of the required parameters aren't provided, **do not** create a new show in the db and return a `422` with a useful `message`. In general, your messages should provide the user/developer useful feedback on what they did wrong and how they can fix it.
 
-This is how you can send `body` parameters from Postman. Make sure you don't mistake this for query parameters!
+This is how you can send `body` parameters from Postman. Make sure you don't mistake this for query parameters (which would look something like `/shows?param1=val1&param2=val2`)!
 ![Postman POST](backend/docs/postman_post.png)
 
 ## Part 4
@@ -195,6 +201,8 @@ GET /shows?minEpisodes=3
 ```
 
 ## Vue
+
+Check the README in the `vue-frontend` folder for more detailed instructions!
 
 ### Part 1
 
