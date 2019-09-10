@@ -64,7 +64,7 @@ GET /shows
 http://127.0.0.1:8080/shows
 ```
 
-This should return a properly formatted JSON response that contains a list of all the `shows` in the mockdb. If you call this endpoint **after starting the server**, you should get this response in Postman/ARC:
+This should return a properly formatted [JSON](https://www.w3schools.com/whatis/whatis_json.asp) response that contains a list of all the `shows` in the mockdb. If you call this endpoint **after starting the server**, you should get this response in Postman/ARC:
 
 ```
 {
@@ -101,7 +101,7 @@ Define the endpoint:
 GET /shows/<id>
 ```
 
-This should retrieve a single show that has the `id` provided from the request. For example, `GET /shows/1` would return:
+This should retrieve a single show that has the `id` provided from the request. For example, `GET http://127.0.0.1:8080/shows/1` would return:
 
 ```
 {
@@ -171,7 +171,7 @@ If the show with the provided `id` cannot be found, return a `404` and a useful 
 
 ## Part 6 (Bonus!)
 
-Extend the first `/shows` enpoint by adding the ability to query the shows based on the number of episodes they have. You should _not_ use a URL parameter like you did in Part 2. Instead, use a [query string](https://en.wikipedia.org/wiki/Query_string).
+Extend the first `/shows` endpoint by adding the ability to query the shows based on the number of episodes they have. You should _not_ use a URL parameter like you did in Part 2. Instead, use a [query string parameter](https://en.wikipedia.org/wiki/Query_string). If no query string parameter is passed, the endpoint should still return all shows as before.
 
 If `minEpisodes` is provided as a query string parameter, only return the shows which have that number or more episodes seen. Use what you've learned so far to figure out what you could return if there are no shows matching the query parameter.
 
