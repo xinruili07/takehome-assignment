@@ -147,7 +147,7 @@ Define the endpoint:
 PUT /shows/<id>
 ```
 
-Here we need to provide a show's `id` since we need to specify which show to update. The `body` for this request should contain the same attributes as the `POST` request from Part 4.
+Here we need to provide a show's `id` since we need to specify which show to update. The `body` for this request should contain the same attributes as the `POST` request from Part 3.
 
 However, the difference with this `PUT` request is that only values with the provided keys (`name`, `episodes_seen`) will be updated, and any parameters not provided will not change the corresponding attribute in the show being updated.
 
@@ -155,7 +155,7 @@ You do not need to account for `body` parameters provided that aren't `name`, or
 
 If the show with the provided `id` cannot be found, return a `404` and a useful `message`.
 
-If you do find the show, return it in the same way you did in Part 4 with the updated values.
+If you do find the show, return it in the same way you did in Part 3 with the updated values.
 
 ## Part 5 - Already Done
 
@@ -245,7 +245,7 @@ Tasks:
 
 * Open the empty `Show` component and add properties for `id`, `name`, and `episodes_seen`
 * In the template section of the `Show` component, display the show name
-* In the same template section, render a `Counter` component. Modify the `Counter` component to take the initial count as a prop, and use this value for `count` in the initial state
+* In the same template section, render a `Counter` component. Modify the `Counter` component to take the initial count as a prop, and use this value for `count` in the initial state. Look at the `Home` component to see how to import a component. 
 * Pass the number of episodes watched as a prop to `Counter`. Notice how you nested the `Counter` component within the `Show` component!
 * To check that this works, just look at your running app. You should see 3 show names, each of which should have a counter next to it.
 
