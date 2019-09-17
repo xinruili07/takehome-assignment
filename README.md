@@ -26,7 +26,7 @@ This project will be broken down into multiple parts. After you finish this proj
 
 Submit either a link to your forked GitHub repository or a zipped folder with all of your code to hack4impact@mcgilleus.ca.
 
-For any questions, feel free to email albert.kragl@mail.mcgill.ca.
+For any questions, feel free to email president.hack4impact@mcgilleus.ca.
 
 ## Setup
 
