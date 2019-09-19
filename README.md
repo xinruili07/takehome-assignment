@@ -43,7 +43,7 @@ $ cd takehome-assignment
 
 Now open a second terminal and navigate to this cloned repository. 
 In one of the terminals, type `cd backend` then follow the [backend instructions](backend/README.md).
-In the other, type `cd vue-frontend` then follow the [frontend instructions](frontend/README.md).
+In the other, type `cd vue-frontend` then follow the [frontend instructions](vue-frontend/README.md).
 
 [Postman](https://www.getpostman.com/) or [Advanced REST Client](https://install.advancedrestclient.com/install) will be useful for testing your backend as you go. These are applications that can send various types of HTTP requests to specified endpoints. Click on the links to download whichever one you prefer. Note that the Postman examples are about a different scenario, but they should help you to use it.
 
