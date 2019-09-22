@@ -6,6 +6,7 @@
     <!-- PART 6 -->
     <br/>
     <input v-model="new_show" placeholder="Enter the name of the show"/>
+    <!-- Button to add_show function with new_show as argument -->
     <button type="button" v-on:click="add_show(new_show)">Add Show</button>
     <br/>
 
@@ -32,6 +33,7 @@ export default {
   },
 
   methods: {
+    // function pushes new_show to the array of shows
     add_show: function add_show(new_show) {this.shows.push({id: this.shows.length + 1, name: new_show, episodes_seen: 0})
 }
   },
@@ -43,7 +45,6 @@ export default {
         { id: 2, name: "Naruto", episodes_seen: 220 },
         { id: 3, name: "Black Mirror", episodes_seen: 3 }
       ], 
-      new_show: ""
     };
   }
 };

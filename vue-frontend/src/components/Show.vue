@@ -2,6 +2,7 @@
   <!-- PART 4: Add your code here -->
   <div>
     <p>{{name}}</p>
+    <!-- Set count to be the number of episodes seen -->
     <Counter :count=episodes_seen></Counter>
     <br/>
   </div>
