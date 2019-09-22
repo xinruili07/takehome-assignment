@@ -62,6 +62,7 @@ def delete_show(id):
 #Part 2
 @app.route("/shows/<id>", methods=['GET'])
 def get_show_by_id(id):
+    # if the show with the provided id does not exist
     if db.getById('shows', int(id)) is None:
         return create_response(status=404, message="No show with this id exists!")
     return create_response({"shows": db.getById("shows", int(id))})
@@ -69,25 +70,33 @@ def get_show_by_id(id):
 #Part 3
 @app.route("/shows", methods=['POST'])
 def add_show():
+    # obtain the request.json file from the POST method
     data = request.json
     name = data.get('name', '')
     episodes_seen = data.get('episodes_seen', '')
+
+    # if the name or the number of episodes seen is not provided
     if "name" not in data or name == None:
         return create_response(status=422, message="The name of the show is not provided.")
     if "episodes_seen" not in data or episodes_seen == None:
         return create_response(status=422, message="The number of episodes seen is not provided.")
+    #create the show with the required informations
     added_show = db.create("shows", data)
     return create_response(data = added_show, status=201, message="Show added!")
 #Part 4
 @app.route("/shows/<id>", methods=['PUT'])
 def update_show(id):
+    # if the show with the provided id does not exist
     if db.getById("shows", int(id)) is None:
         return create_response(status=404, message="No show with this id exists!")
-       
+    
     show = db.getById("shows", int(id))
+    # received request.json file
     data = request.json
+    # obtain the updated name and episodes_seen
     name = data.get("name", "")
     episodes_seen = data.get("episodes_seen", "")
+    #update the values from the corresponding show in our database
     show["name"] = name
     show["episodes_seen"] = episodes_seen
     return create_response(data=show, status=201, message="Show updated!")
@@ -95,12 +104,16 @@ def update_show(id):
 #Part 6
 @app.route("/shows", methods=['GET'])
 def return_shows_with_min_episodes():
+    # obtain the query argument
     minEpisodes_string = request.args.get("minEpisodes")
+    # if no query argument is provided, return all shows
     if minEpisodes_string == None:
         return create_response({"shows": db.get('shows')})
-
+    # convert the string to an integer
     minEpisodes_int = int(minEpisodes_string)
     shows = db.get("shows")
+
+    #initialize an empty list and add relevant shows
     relevant_shows = []
     for show in shows:
         if show["episodes_seen"] >= minEpisodes_int:
