@@ -51,10 +51,6 @@ def mirror(name):
     data = {"name": name}
     return create_response(data)
 
-@app.route("/shows", methods=['GET'])
-def get_all_shows():
-    return create_response({"shows": db.get('shows')})
-
 @app.route("/shows/<id>", methods=['DELETE'])
 def delete_show(id):
     if db.getById('shows', int(id)) is None:
@@ -70,6 +66,7 @@ def get_show_by_id(id):
         return create_response(status=404, message="No show with this id exists!")
     return create_response({"shows": db.getById("shows", int(id))})
 
+#Part 3
 @app.route("/shows", methods=['POST'])
 def add_show():
     data = request.json
@@ -81,7 +78,35 @@ def add_show():
         return create_response(status=422, message="The number of episodes seen is not provided.")
     added_show = db.create("shows", data)
     return create_response(data = added_show, status=201, message="Show added!")
-    
+#Part 4
+@app.route("/shows/<id>", methods=['PUT'])
+def update_show(id):
+    if db.getById("shows", int(id)) is None:
+        return create_response(status=404, message="No show with this id exists!")
+       
+    show = db.getById("shows", int(id))
+    data = request.json
+    name = data.get("name", "")
+    episodes_seen = data.get("episodes_seen", "")
+    show["name"] = name
+    show["episodes_seen"] = episodes_seen
+    return create_response(data=show, status=201, message="Show updated!")
+
+#Part 6
+@app.route("/shows", methods=['GET'])
+def return_shows_with_min_episodes():
+    minEpisodes_string = request.args.get("minEpisodes")
+    if minEpisodes_string == None:
+        return create_response({"shows": db.get('shows')})
+
+    minEpisodes_int = int(minEpisodes_string)
+    shows = db.get("shows")
+    relevant_shows = []
+    for show in shows:
+        if show["episodes_seen"] >= minEpisodes_int:
+            relevant_shows.append(show)
+    return create_response(data={"shows": relevant_shows}, message="Shows with more than {} episode(s) seen found!".format(minEpisodes_int))
+
 """
 ~~~~~~~~~~~~ END API ~~~~~~~~~~~~
 """
